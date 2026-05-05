@@ -32,7 +32,8 @@
 4. **MD 粒度**:按月一文件(`YYYY-MM.md`)+ 年度 summary(`YYYY-summary.md`)。
 5. **类目映射**:Sheets 里逐月人工校正。代码不硬编码类目规则。
 6. **币种**:落库保留原币种,MD 加 HKD 折算列。**绝不混算不同币种总数**。
-7. **Gmail thread 打 `Finance/Processed` 标签即不再扫**。状态以 label 为准,不依赖本地缓存。
+7. **Gmail thread 打 `Acct/Processed` 标签即不再扫**。状态以 label 为准,不依赖本地缓存。
+   (Label 前缀用 `Acct/` 而非 `Finance/`,因为 Gmail 把 `Finance` 当系统保留名,无法创建。)
 
 ---
 
