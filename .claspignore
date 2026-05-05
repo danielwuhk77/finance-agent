@@ -1,0 +1,24 @@
+# clasp push 时排除的文件 / 目录
+# 只把 apps-script/ 下的内容推到云端
+
+**/**
+!apps-script/**
+!apps-script/**/.*
+
+# 显式排除(双保险)
+README.md
+CLAUDE.md
+*.md
+docs/**
+samples/**
+tests/**
+prompts/**
+schemas/**
+cloud-function/**
+node_modules/**
+package.json
+package-lock.json
+.git/**
+.gitignore
+.env
+.env.*

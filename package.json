@@ -1,0 +1,15 @@
+{
+  "name": "finance-agent",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Personal Finance AI Agent — Gmail ingestion to Drive (V1 scaffold)",
+  "scripts": {
+    "push": "clasp push",
+    "pull": "clasp pull",
+    "open": "clasp open",
+    "logs": "clasp logs --watch"
+  },
+  "devDependencies": {
+    "@google/clasp": "^2.4.2"
+  }
+}

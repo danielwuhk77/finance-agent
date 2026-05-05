@@ -1,0 +1,30 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+Thumbs.db
+._*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# clasp 本地状态(scriptId 已在 .clasp.json,这里防止误推 user creds)
+.clasprc.json
+
+# Build / temp
+dist/
+build/
+*.log
+tmp/
