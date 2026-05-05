@@ -21,30 +21,36 @@ const CONFIG = {
   /** /Finance/Index/Run-Log Sheet 的 sheet ID */
   runLogSheetId: '1XuMt1Kw5Aze0YPM8eFE4r8bRvumB4odpgznIrXVQiXY',
 
-  /** Gmail 上"已处理"标签;打上即不再扫 */
-  processedLabel: 'Finance/Processed',
+  /**
+   * Gmail 上"已处理"标签;打上即不再扫。
+   * 注:Gmail 把 "Finance" 当系统保留名,所以前缀用 Acct/(account)。
+   */
+  processedLabel: 'Acct/Processed',
 
   /** 待扫描的 Gmail label 列表(顺序无关) */
   scanLabels: [
-    'Finance/Bank/HSBC',
-    'Finance/Bank/HangSeng',
-    'Finance/Bank/BOCHK',
-    'Finance/Bank/Citibank',
-    'Finance/CreditCard/HSBC-CC',
-    'Finance/CreditCard/Citibank-CC'
+    'Acct/Bank/HSBC',
+    'Acct/Bank/HangSeng',
+    'Acct/Bank/BOCHK',
+    'Acct/Bank/Citibank',
+    'Acct/Bank/ICBC-Asia',
+    'Acct/CreditCard/HSBC-CC',
+    'Acct/CreditCard/Citibank-CC'
   ],
 
   /**
    * Gmail label → Drive 子目录名的映射。
    * 落盘路径为 /Finance/Inbox-Raw/YYYY-MM/<folderName>/
+   * (Drive 根目录仍叫 Finance,只有 Gmail label 改前缀)
    */
   labelToFolder: {
-    'Finance/Bank/HSBC': 'HSBC',
-    'Finance/Bank/HangSeng': 'HangSeng',
-    'Finance/Bank/BOCHK': 'BOCHK',
-    'Finance/Bank/Citibank': 'Citibank',
-    'Finance/CreditCard/HSBC-CC': 'HSBC-CC',
-    'Finance/CreditCard/Citibank-CC': 'Citibank-CC'
+    'Acct/Bank/HSBC': 'HSBC',
+    'Acct/Bank/HangSeng': 'HangSeng',
+    'Acct/Bank/BOCHK': 'BOCHK',
+    'Acct/Bank/Citibank': 'Citibank',
+    'Acct/Bank/ICBC-Asia': 'ICBC-Asia',
+    'Acct/CreditCard/HSBC-CC': 'HSBC-CC',
+    'Acct/CreditCard/Citibank-CC': 'Citibank-CC'
   },
 
   /** 接受的附件后缀(小写,带点) */

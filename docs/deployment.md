@@ -57,26 +57,30 @@ npm install
 
 ### 4.1 必建 label(Gmail 设置 → Labels)
 
+> **重要**:Gmail 把 `Finance` 当系统保留 label(对应自动分类的 "财务" tab),不能新建。前缀用 `Acct/`(account)。
+
 | Label | 用途 |
 |---|---|
-| `Finance/Bank/HSBC` | HSBC 账单类邮件 |
-| `Finance/Bank/HangSeng` | 恒生账单 |
-| `Finance/Bank/BOCHK` | 中银香港 |
-| `Finance/Bank/Citibank` | 花旗个人账户 |
-| `Finance/CreditCard/HSBC-CC` | HSBC 信用卡 |
-| `Finance/CreditCard/Citibank-CC` | Citi 信用卡 |
-| `Finance/Processed` | **代码自动打**,不要手动加 |
+| `Acct/Bank/HSBC` | HSBC 账单类邮件 |
+| `Acct/Bank/HangSeng` | 恒生账单 |
+| `Acct/Bank/BOCHK` | 中银香港 |
+| `Acct/Bank/Citibank` | 花旗个人账户 |
+| `Acct/Bank/ICBC-Asia` | 工银亚洲 |
+| `Acct/CreditCard/HSBC-CC` | HSBC 信用卡 |
+| `Acct/CreditCard/Citibank-CC` | Citi 信用卡 |
+| `Acct/Processed` | **代码自动打**,不要手动加 |
 
 ### 4.2 Filter 示例(Gmail 设置 → Filters)
 
 | 来源 | From / Subject 关键词 | Apply Label |
 |---|---|---|
-| HSBC | `from:(@hsbc.com.hk) subject:(statement OR e-Statement)` | `Finance/Bank/HSBC` |
-| HangSeng | `from:(@hangseng.com)` | `Finance/Bank/HangSeng` |
-| BOCHK | `from:(@bochk.com)` | `Finance/Bank/BOCHK` |
-| Citi | `from:(@citibank.com.hk)` | `Finance/Bank/Citibank` |
-| HSBC-CC | `from:(@hsbc.com.hk) subject:(credit card)` | `Finance/CreditCard/HSBC-CC` |
-| Citi-CC | `from:(@citibank.com.hk) subject:(credit card)` | `Finance/CreditCard/Citibank-CC` |
+| HSBC | `from:(@hsbc.com.hk) subject:(statement OR e-Statement)` | `Acct/Bank/HSBC` |
+| HangSeng | `from:(@hangseng.com)` | `Acct/Bank/HangSeng` |
+| BOCHK | `from:(@bochk.com)` | `Acct/Bank/BOCHK` |
+| Citi | `from:(@citibank.com.hk)` | `Acct/Bank/Citibank` |
+| ICBC-Asia | `from:(@icbcasia.com OR @icbc.com.hk)` | `Acct/Bank/ICBC-Asia` |
+| HSBC-CC | `from:(@hsbc.com.hk) subject:(credit card)` | `Acct/CreditCard/HSBC-CC` |
+| Citi-CC | `from:(@citibank.com.hk) subject:(credit card)` | `Acct/CreditCard/Citibank-CC` |
 
 > 关键词以实际收到的银行邮件为准,部署后看 Run-Log 命中数微调。
 
@@ -122,7 +126,7 @@ npm run open
 - [ ] `installTriggers` 跑完后,Web IDE 的 **Triggers** 页有一条 `runDailyIngestion` 每日 07:00 HKT
 - [ ] `debugRunOnce` 跑完无红错
 - [ ] `/Finance/Inbox-Raw/YYYY-MM/<bank>/` 下出现附件文件(若该 label 下有未处理邮件)
-- [ ] 被处理过的 Gmail thread 上多了一个 `Finance/Processed` 标签
+- [ ] 被处理过的 Gmail thread 上多了一个 `Acct/Processed` 标签
 - [ ] Run-Log Sheet 第一行是表头,第二行起是运行记录
 
 ---
